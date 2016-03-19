@@ -33,8 +33,12 @@
   <div id="topMenu">
 
     <ul>
-    	<li><a href="{{ SITEURL }}">Home</a></li>
+    	<li><a href="{{ SITEURL }}/index.html">日志</a></li>
         <li>&ndash;</li>
+        {% for page in PAGES %}
+            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+            <li>&ndash;</li>
+        {% endfor %}
         <li><a href="{{ SITEURL }}/archives.html">存档</a></li>
 
     </ul>
@@ -42,14 +46,6 @@
   </div><!-- end #topMenu -->
 
   <div id="sidebar">
-  	{% if DISPLAY_PAGES_ON_MENU %}
-	<h3>Pages</h3>
-	<ul>
-        {% for page in PAGES %}
-            <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-        {% endfor %}
-	</ul>
-        {% endif %}
     <h3>分类</h3>
     <ul>
 	{% for cat, null in categories %}
@@ -80,14 +76,14 @@
                 </ul>
         </li><!-- /.social -->
         {% endif %}
-<li>
+<!-- <li>
         <h3>Tags</h3>
         <ul>
         {% for tag, articles in tags %}
                 <li><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a></li>
         {% endfor %}
         </ul>
-</li>
+</li> -->
 
 
   </div><!-- end #sidebar -->
