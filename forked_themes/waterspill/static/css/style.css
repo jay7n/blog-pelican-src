@@ -1,3 +1,5 @@
+@import url("pygment.css");
+
 * { margin: 0; padding: 0; }
 
 /* *** General Styles *** */
@@ -5,6 +7,11 @@
 @font-face {
     font-family: 'YuweiYinbiRegular';
     src: url('../fonts/yuwei_yinbi_regular.ttf');
+}
+
+@font-face {
+    font-family: 'MonofurForPowerLine';
+    src: url('../fonts/monofur_for_powerline.ttf');
 }
 
 body  {
@@ -30,8 +37,8 @@ a:hover {
 }
 
 p {
-	line-height: 1.5em;
-	padding: 5px 0;
+	line-height: 1.3em;
+	padding: 15px 0 15px 0;
 }
 
 h1,
@@ -88,9 +95,9 @@ ol {
 
 #footer {
 	background: url(../images/bottom.gif) no-repeat;
-	font-size: 12px;
+	font-size: 14px;
 	height: 70px;
-	padding: 0 10px 0 20px;
+	padding: 10px 10px 0 20px;
 }
 
 /* *** Header Styles *** */
@@ -104,7 +111,7 @@ ol {
 #header h2 {
 	font-size: 18px;
 	font-weight: normal;
-	text-align: right;
+	padding: 0 0 0 70px;
 }
 
 #header a:hover {
@@ -133,6 +140,7 @@ ol {
 
 .blogItem {
 	padding-bottom: 20px;
+    width: 510px;
 }
 
 .blogItem h2,
@@ -152,7 +160,7 @@ ol {
 
 .blogItem h3 {
 	background: url(../images/hr.gif) bottom left no-repeat;
-	font-size: 14px;
+	font-size: 18px;
 	padding-bottom: 6px;
 }
 
@@ -171,6 +179,11 @@ ol {
 
 .blogItem .separator {
     height: 20px;
+}
+
+.blogContent {
+    font-size: 18px;
+    padding-top: 30px;
 }
 
 /* *** Sidebar Styles *** */
@@ -207,8 +220,8 @@ ol {
 /* *** Footer Styles *** */
 
 #footer p {
-	padding: 30px 0 0 0;
-	text-align: center;
+	padding: 5px 10px 0 0;
+	text-align: right;
 }
 
 .floatR {
@@ -226,4 +239,17 @@ ol {
     height:0;
     font-size: 1px;
     line-height: 0px;
+}
+
+.highlight {
+    background-color: rgba(218, 219, 202, 0.4);
+    /*background-color: rgba(204, 209, 157, 0.3);*/
+    word-wrap: break-word;
+    /*width: 600px;*/
+    padding: 10px 5px 10px 5px;
+    font-size: 13px;
+}
+
+.highlight pre {
+    font-family: "MonofurForPowerLine";
 }

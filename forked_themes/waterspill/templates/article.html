@@ -1,25 +1,29 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
-{% block content %} 
+{% block content %}
 
 
 <div class="blogItem">
-    
+
       <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
       <h3>Le {{ article.locale_date }}</h3>
-      
-  {{ article.content }}	
+
+  <div class="blogContent">
+      {{ article.content }}
+  </div>
   {% include 'twitter.html' %}
-      
-      <h3 class="blogMeta">Par <a href="#">{{ article.author }}</a>, Catégorie : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
-	<h3 class="blogMeta">Tags : {% for tag in article.tags %}
-<span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span>
+
+      <h3 class="blogMeta">
+          <!-- Par <a href="#">{{ article.author }}</a>,  -->
+          分类 : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
+	<!-- <h3 class="blogMeta">Tags : {% for tag in article.tags %} -->
+<!-- <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span> -->
 {% endfor %}</h3>
-    
+
     </div><!-- end #blogItem -->
 {% if DISQUS_SITENAME %}
 <div class="blogItem">
-    
+
       <h2>Commentaires</h2>
 <div id="disqus_thread"></div>
     <script type="text/javascript">
@@ -32,6 +36,6 @@
     </script>
   </div>
                                         {% endif %}
-				
+
 				<!-- end #content -->
-{% endblock %}	
+{% endblock %}

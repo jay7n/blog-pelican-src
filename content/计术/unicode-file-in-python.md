@@ -1,8 +1,6 @@
 Title: python加载Unicode文件
-Slug: unicode-file-in-python
 Tags: unicode
 Date: 2015-12-30 22:00
-Summary: python在执行一个文件时，是如何选取/决定字符编码(encoding)的？本小记试着从源码实现的角度，追踪一下它的来龙去脉。
 
 python在执行一个文件时，是如何选取/决定字符编码(encoding)的？本小记试着从源码实现的角度，追踪一下它的来龙去脉。
 
@@ -288,10 +286,10 @@ PyParser_ASTFromFile(FILE *fp, const char *filename, int start, char *ps1,
     }
     ...
 }
-```
+
 mod_ty
 PyAST_FromNode(const node *n, PyCompilerFlags *flags, const char *filename,
-               PyArena *arena）
+               PyArena *arena)
 {
 	...
 	if (flags && flags->cf_flags & PyCF_SOURCE_IS_UTF8) {
