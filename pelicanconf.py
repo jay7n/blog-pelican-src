@@ -32,6 +32,10 @@ WITH_FUTURE_DATES = True
 DEFAULT_PAGINATION = 7
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
 THEME = 'forked_themes/waterspill'
+
+LOAD_CONTENT_CACHE = False
+PLUGIN_PATHS = ['plugins/']
+PLUGINS = ['subdirectories']
