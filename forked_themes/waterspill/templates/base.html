@@ -48,9 +48,26 @@
   <div id="sidebar">
     <h3>分类</h3>
     <ul>
-	{% for cat, null in categories %}
+	<!-- {% for cat, null in categories %}
 		 <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-	{% endfor %}
+	{% endfor %} -->
+
+    {% for entry in foldercat.entries recursive %}
+        <div class='foldercat'>
+            {% if entry.url is not none %}
+                <a href="{{ SITEURL }}/{{ entry.url }}">
+                    {{ entry.name }} ({{entry.count}})
+               </a>
+            {% else %}
+                {{ entry.name }}:
+            {% endif %}
+
+
+            {% if not entry.is_leaf %}
+                {{ loop(entry.entries) }}
+            {% endif %}
+        </div>
+    {% endfor %}
 	</ul>
     {% if LINKS %}
 	<li>

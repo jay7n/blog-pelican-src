@@ -10,6 +10,16 @@
 }
 
 @font-face {
+    font-family: 'GuoxiaoyuKaiti';
+    src: url('../fonts/guoxiaoyu_kaiti.ttf');
+}
+
+@@font-face {
+    font-family: 'AlexsWriting';
+    src: url('../fonts/alexs_writing.ttf');
+}
+
+@font-face {
     font-family: 'MonofurForPowerLine';
     src: url('../fonts/monofur_for_powerline.ttf');
 }
@@ -17,7 +27,8 @@
 body  {
     background: url(../images/background_grey.jpg);
 	color: #293331;
-	font-family: "YuweiYinbiRegular";
+	/*font-family: "MonofurForPowerLine", "GuoxiaoyuKaiti";*/
+    font-family: 'YuweiYinbiRegular';
 	text-align: center;
 }
 
@@ -82,10 +93,12 @@ ol {
 }
 
 #sidebar {
+    /*background-color: rgba(218, 219, 202, 0.3);*/
 	float: right;
-	padding: 20px 30px 10px 0;
-	text-align: right;
+    margin: 20px 30px 20px 20px;
+	padding: 20px 0 10px 0;
 	width: 150px;
+    border-radius: 15px;
 }
 
 #mainContent {
@@ -182,7 +195,8 @@ ol {
 }
 
 .blogContent {
-    font-size: 18px;
+    font: 14px "";
+    font: 18px 'YuweiYinbiRegular';
     padding-top: 30px;
 }
 
@@ -253,4 +267,10 @@ ol {
 
 .highlight pre {
     font-family: "MonofurForPowerLine";
+}
+
+.foldercat {
+    width: 100%;
+    height: 100%;
+    padding-left: 20px;
 }

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+
 from __future__ import unicode_literals
 
 AUTHOR = u'Jayson.Li'
@@ -11,6 +12,7 @@ PATH = 'content'
 TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'cn'
+DEFAULT_DATE = u'fs'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -38,4 +40,4 @@ THEME = 'forked_themes/waterspill'
 
 LOAD_CONTENT_CACHE = False
 PLUGIN_PATHS = ['plugins/']
-PLUGINS = ['subdirectories']
+PLUGINS = ['subfolderascat']
