@@ -28,7 +28,8 @@ body  {
     background: url(../images/background_grey.jpg);
 	color: #293331;
 	/*font-family: "MonofurForPowerLine", "GuoxiaoyuKaiti";*/
-    font-family: 'YuweiYinbiRegular';
+    /*font-family: 'YuweiYinbiRegular';*/
+    font-family: 'MonofurForPowerLine';
 	text-align: center;
 }
 
@@ -116,7 +117,9 @@ ol {
 /* *** Header Styles *** */
 
 #header h1 {
-	font-size: 48px;
+    font-family: 'MonofurForPowerLine';
+    font-family: fantasy;
+	font-size: 40px;
 	font-weight: normal;
 	padding: 20px 0 0 20px;
 }
@@ -134,8 +137,10 @@ ol {
 /* *** Top Menu Styles *** */
 
 #topMenu ul {
-	font-size: 24px;
-	line-height: 1em;
+	font-size: 20px;
+    font-family: 'MonofurForPowerLine';
+    font-family: fantasy;
+	/*line-height: 1em;*/
 	list-style: none;
 	padding: 14px 30px 0 0;
 	text-align: center;
@@ -181,6 +186,7 @@ ol {
 	background-position: top left;
 	padding: 6px 0 0 0;
 	text-align: right;
+    font-size: 14px;
 }
 
 .blogItem h3.blogMeta .blogDate{
@@ -200,6 +206,8 @@ ol {
 }
 
 .blogItem header {
+    font-family: 'MonofurForPowerLine';
+    /*font-family: fantasy;*/
     background-color: rgba(0, 0, 0, 0.1);
 }
 
@@ -218,8 +226,8 @@ ol {
 }
 
 .blogContent {
-    font: 14px "";
-    font: 18px 'YuweiYinbiRegular';
+    font: 14px 'MonofurForPowerLine';
+    /*font: 18px 'YuweiYinbiRegular';*/
     /*font: 18px 'GuoxiaoyuKaiti';*/
     padding-top: 10px;
 }
@@ -229,15 +237,18 @@ ol {
 }
 
 /* *** Sidebar Styles *** */
-
 #sidebar h3 {
+    font-family: 'MonofurForPowerLine';
+    font-family: fantasy;
 	font-size: 24px;
 	font-weight: normal;
+    height: 20px;
 }
 
 #sidebar ul {
+    font-size: 14px;
 	line-height: 1.8em;
-	list-style: none;
+	list-style: circle;
 	padding-bottom: 20px;
     margin-left: -15px;
     margin-top: 10px;
