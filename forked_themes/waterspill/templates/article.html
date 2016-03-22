@@ -19,7 +19,7 @@
           分类 : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
 	<!-- <h3 class="blogMeta">Tags : {% for tag in article.tags %} -->
 <!-- <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span> -->
-{% endfor %}</h3>
+<!-- {% endfor %}</h3> -->
 
     </div><!-- end #blogItem -->
 {% if DISQUS_SITENAME %}
@@ -39,4 +39,4 @@
                                         {% endif %}
 
 				<!-- end #content -->
-{% endblock %}
+{% endblock content %}
