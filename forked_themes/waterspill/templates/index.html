@@ -5,7 +5,7 @@
         {% for article in articles %}
             {% if loop.index == 1 %}
                 <div class="blogItem">
-                    <h2><header><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
+                    <header><h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
 
                     <div class="img_separator"></div>
 
@@ -32,7 +32,7 @@
                 </div><!-- end #blogItem -->
             {% else %}
                 <div class="blogItem">
-                    <h2><header><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
+                    <header><h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
 
                     <div class="img_separator"></div>
 
