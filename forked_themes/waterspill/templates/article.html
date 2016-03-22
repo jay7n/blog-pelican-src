@@ -5,8 +5,9 @@
 
 <div class="blogItem">
 
-      <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-      <h3>Le {{ article.locale_date }}</h3>
+      <h2><header><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
+
+    <div class="img_separator"></div>
 
   <div class="blogContent">
       {{ article.content }}
@@ -14,6 +15,7 @@
   {% include 'twitter.html' %}
 
       <h3 class="blogMeta">
+          <div class='blogDate'> {{ article.locale_date }} </div>
           <!-- Par <a href="#">{{ article.author }}</a>,  -->
           分类 : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
 	<!-- <h3 class="blogMeta">Tags : {% for tag in article.tags %} -->

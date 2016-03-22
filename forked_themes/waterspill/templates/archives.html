@@ -6,7 +6,9 @@
     <dl>
         {% for article in dates %}
             <dt>{{ article.locale_date }}</dt>
-            <dd><a href='{{ article.url }}'>{{ article.title }}</a></dd>
+            <header><dd><a href='{{ article.url }}'>{{ article.title }}</a></dd></header>
+
+            <div class="img_separator"></div>
             <div class="separator"></div>
         {% endfor %}
     </dl>

@@ -13,6 +13,7 @@ class FolderCat(object):
         assert os.path.isdir(dir)
 
         ls = os.listdir(dir)
+
         for sub_dir in ls:
             sub_dir_absp = os.path.join(dir, sub_dir)
             if os.path.isdir(sub_dir_absp):
@@ -27,10 +28,10 @@ class FolderCat(object):
         self.count = None
         self.url = None
 
-        if os.path.basename(dir) in exc_dirs:
-            self.excluded = True
+        if os.path.basename(dir) in exc_dirs or len(os.listdir(dir)) == 0:
+            self.ignore = True
         else:
-            self.excluded = False
+            self.ignore = False
 
         ls = os.listdir(dir)
 
@@ -46,7 +47,7 @@ class FolderCat(object):
                 sub_dir_absp = os.path.join(dir, sub_dir)
                 if os.path.isdir(sub_dir_absp):
                     fc = FolderCat(pelican_cats, sub_dir_absp, exc_dirs)
-                    if fc.excluded is False:
+                    if fc.ignore is False:
                         self.entries.append(fc)
 
     def IsLeaf(self):
@@ -70,7 +71,7 @@ class FolderCat(object):
             for fl in self.entries:
                 for i in range(depth + 1):
                     print '\t',
-                print fl
+                print os.path.basename(str(fl))
         else:
             for sub in self.entries:
                 sub.TestPrintSelf(depth + 1)
@@ -79,8 +80,9 @@ class FolderCat(object):
 def create_subcategories_by_folder(generator):
     logger.debug('enter subfolderascat plugin')
 
-    content_dir = generator.settings.get('PATH')
-    fc = FolderCat(generator.categories, content_dir, ['pages'])
+    content_dir = generator.settings.get('SUBFOLDERASCAT_PATH')
+    excluded_folders = generator.settings.get('SUBFOLDERASCAT_EXC_FOLDERS')
+    fc = FolderCat(generator.categories, content_dir, excluded_folders)
 
     if __debug__:
         fc.TestPrintSelf()

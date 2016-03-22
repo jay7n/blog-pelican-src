@@ -5,8 +5,9 @@
         {% for article in articles %}
             {% if loop.index == 1 %}
                 <div class="blogItem">
-                    <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                    <h3>Le {{ article.locale_date }}</h3>
+                    <h2><header><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
+
+                    <div class="img_separator"></div>
 
                     <div class="blogContent">
                         {{ article.summary }}
@@ -15,6 +16,7 @@
                     <a href="{{ SITEURL }}/{{ article.url }}">阅读全文 .. </a>
 
                     <h3 class="blogMeta">
+                        <div class='blogDate'> {{ article.locale_date }} </div>
                         <!-- 作者 <a href="#">{{ article.author }}</a>, -->
                         分类 : <a href="{{ SITEURL }}/{{ article.category.url }}">
                                     {{ article.category }}
@@ -26,20 +28,22 @@
                             <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span>
                         {% endfor %}
                     </h3> -->
+                    <div class="separator_x2"></div>
                 </div><!-- end #blogItem -->
-
             {% else %}
                 <div class="blogItem">
-                    <h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h2>
-                    <h3>Le {{ article.locale_date }}</h3>
+                    <h2><header><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
+
+                    <div class="img_separator"></div>
 
                     <div class="blogContent">
                         {{ article.summary }}
                     </div>
 
                     <a href="{{ SITEURL }}/{{ article.url }}">阅读全文 .. </a>
-                    
+
                     <h3 class="blogMeta">
+                        <div class='blogDate'> {{ article.locale_date }} </div>
                         <!-- Par <a href="#">{{ article.author }}</a>, -->
                         分类: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
                 </div><!-- end #blogItem -->

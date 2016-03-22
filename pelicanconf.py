@@ -39,5 +39,14 @@ DEFAULT_PAGINATION = 7
 THEME = 'forked_themes/waterspill'
 
 LOAD_CONTENT_CACHE = False
+
+STATIC_PATHS = ['images']
+
+DEFAULT_DATE_FORMAT = "%x - %a"
+
+
 PLUGIN_PATHS = ['plugins/']
 PLUGINS = ['subfolderascat']
+# subfolderascat configs
+SUBFOLDERASCAT_PATH = PATH
+SUBFOLDERASCAT_EXC_FOLDERS = ['pages', 'images']

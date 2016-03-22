@@ -161,11 +161,11 @@ ol {
 	font-weight: normal;
 }
 
-.blogItem h2 a:hover,
+/*.blogItem h2 a:hover,
 .blogItem h3 a:hover {
 	background: none;
 	text-decoration: underline;
-}
+}*/
 
 .blogItem h2 {
 	font-size: 24px;
@@ -183,6 +183,11 @@ ol {
 	text-align: right;
 }
 
+.blogItem h3.blogMeta .blogDate{
+    text-align: left;
+    float: left;
+}
+
 .blogItem dt {
     font-size: 18px;
 }
@@ -190,14 +195,37 @@ ol {
     font-size: 20px;
 }
 
+.blogItem dd a {
+    text-decoration: none;
+}
+
+.blogItem header {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .blogItem .separator {
     height: 20px;
+}
+
+.blogItem .separator_x2 {
+    height: 40px;
+}
+
+.blogItem .img_separator {
+	background: url(../images/hr.gif) bottom left no-repeat;
+    width: 100%;
+    height: 5px;
 }
 
 .blogContent {
     font: 14px "";
     font: 18px 'YuweiYinbiRegular';
-    padding-top: 30px;
+    /*font: 18px 'GuoxiaoyuKaiti';*/
+    padding-top: 10px;
+}
+
+.blogContent img {
+    width: 100%;
 }
 
 /* *** Sidebar Styles *** */
@@ -211,6 +239,8 @@ ol {
 	line-height: 1.8em;
 	list-style: none;
 	padding-bottom: 20px;
+    margin-left: -15px;
+    margin-top: 10px;
 }
 
 #sidebar ul a {
@@ -270,7 +300,6 @@ ol {
 }
 
 .foldercat {
-    width: 100%;
-    height: 100%;
     padding-left: 20px;
+    padding-bottom: 5px;
 }
