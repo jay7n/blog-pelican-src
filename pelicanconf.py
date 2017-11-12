@@ -4,7 +4,8 @@
 from __future__ import unicode_literals
 
 AUTHOR = u'Jayson.Li'
-SITENAME = u'侧写流光与独行'
+SITENAME = u'侧写流光与独行 <br/> Walks and Flows'
+SITENAME_ABBR = u'侧写'
 SITEURL = ''
 
 PATH = 'content'
@@ -13,6 +14,8 @@ TIMEZONE = 'Asia/Shanghai'
 
 DEFAULT_LANG = u'cn'
 DEFAULT_DATE = u'fs'
+
+OUTPUT_PATH = '../web'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None

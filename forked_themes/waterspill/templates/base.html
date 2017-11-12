@@ -4,15 +4,16 @@
 <head>
 
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 
-  <title>{% block title %}{{ SITENAME }}{%endblock%}</title>
+  <title>{% block title %}{{ SITENAME_ABBR }}{%endblock%}</title>
 <link href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet" type="text/css" media="screen" />
 <link href="{{ SITEURL }}/{{ FEED }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} ATOM Feed" />
 {% if FEED_RSS %}
 <link href="{{ SITEURL }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
 {% endif %}
 <link href="images/favicon.ico" rel="icon" type="image/x-icon"/>
-<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon"/> 
+<link href="images/favicon.ico" rel="shortcut icon" type="image/x-icon"/>
 
   <!--[if IE]>
   <style type="text/css">
@@ -35,11 +36,11 @@
   <div id="topMenu">
 
     <ul>
-    	<li><a href="{{ SITEURL }}/index.html">日志</a></li>
-        <li>&ndash;</li>
+        <li><a href="{{ SITEURL }}/index.html">日志</a></li>
+        <!-- <li>&ndash;</li> -->
         {% for page in PAGES %}
             <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-            <li>&ndash;</li>
+            <!-- <li>&ndash;</li> -->
         {% endfor %}
         <li><a href="{{ SITEURL }}/archives.html">存档</a></li>
 
@@ -50,9 +51,9 @@
   <div id="sidebar">
     <h3>分类</h3>
     <ul>
-	<!-- {% for cat, null in categories %}
-		 <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-	{% endfor %} -->
+    <!-- {% for cat, null in categories %}
+         <li {% if cat == category %}class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+    {% endfor %} -->
 
     {% for entry in foldercat.entries recursive %}
         <div class='foldercat'>
@@ -70,18 +71,18 @@
             {% endif %}
         </div>
     {% endfor %}
-	</ul>
+    </ul>
     {% if LINKS %}
-	<li>
-		<h3>Blogroll</h3>
-		<ul>
-		{% for name, link in LINKS %}
+    <li>
+        <h3>Blogroll</h3>
+        <ul>
+        {% for name, link in LINKS %}
                     <li><a href="{{ link }}">{{ name }}</a></li>
                 {% endfor %}
-		</ul>
-	</li>
-	{% endif %}
-	{% if SOCIAL %}
+        </ul>
+    </li>
+    {% endif %}
+    {% if SOCIAL %}
         <li>
                 <h3>Social</h3>
                 <ul>
@@ -123,5 +124,20 @@
 
 </div><!-- end #container -->
 {% include 'analytics.html' %}
+
+<script>
+    var sideBar = document.getElementById('sidebar');
+    var sideBarStatus = 'off';
+    sideBar.addEventListener('click', function() {
+        if (sideBarStatus == 'off') {
+            sideBar.className = 'sidebar-slide-on';
+            sideBarStatus = 'on';
+        } else {
+            sideBar.className = 'sidebar-slide-off';
+            sideBarStatus = 'off';
+        }
+    })
+</script>
+
 </body>
 </html>

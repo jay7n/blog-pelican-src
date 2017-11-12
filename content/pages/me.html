@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>有关我</title>
+        <meta name="date" content="2012-07-09 22:28" />
+        <meta name="modified" content="2012-07-10 20:14" />
+    </head>
+
+    <!-- <frameset>
+        <frame src="http://me.liyo.site/app.html" name="app" scrolling="no" frameborder="0" style="width:100%"></frame>
+    </frameset> -->
+
+    <body>
+         <script>
+            window.addEventListener('message', function(event) {
+                if (event.data.type == 'onMarkdownContentFullyLoaded') {
+                    let embed = document.getElementsByTagName('embed')
+                    embed = embed && embed.length > 0 ? embed[0] : null
+
+                    if (embed) {
+                        embed
+                        const height = event.data.height + 'px'
+                        embed.style.height = height
+                    }
+                }
+            })
+        </script>
+
+        <embed src="http://me.liyo.site/app.html" style="width:100%">
+    </body>
+</html>

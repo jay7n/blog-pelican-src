@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% block content_title %}{% endblock %}
 {% block content %}
     {% if articles %}
         {% for article in articles %}
@@ -7,7 +6,7 @@
                 <div class="blogItem">
                     <header><h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
 
-                    <div class="img_separator"></div>
+                    <!-- <div class="img_separator"></div> -->
 
                     <div class="blogContent">
                         {{ article.summary }}
@@ -23,7 +22,7 @@
                                </a>
                     </h3>
 
-    	            <!-- <h3 class="blogMeta">Tags :
+                    <!-- <h3 class="blogMeta">Tags :
                         {% for tag in article.tags %}
                             <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span>
                         {% endfor %}
@@ -34,7 +33,7 @@
                 <div class="blogItem">
                     <header><h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
 
-                    <div class="img_separator"></div>
+                    <!-- <div class="img_separator"></div> -->
 
                     <div class="blogContent">
                         {{ article.summary }}
