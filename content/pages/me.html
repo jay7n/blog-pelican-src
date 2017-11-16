@@ -12,19 +12,33 @@
     <body>
          <script>
             window.addEventListener('message', function(event) {
-                if (event.data.type == 'onMarkdownContentFullyLoaded') {
-                    let embed = document.getElementsByTagName('embed')
-                    embed = embed && embed.length > 0 ? embed[0] : null
+                var $loadingme = document.getElementById('loadingme');
+                $loadingme.style.display = 'none';
 
+                var embed = document.getElementsByTagName('iframe');
+                embed = embed && embed.length > 0 ? embed[0] : null;
+
+                if (event.data.type == 'onMarkdownContentScrollHeightUpdated') {
                     if (embed) {
-                        embed
-                        const height = event.data.height + 'px'
-                        embed.style.height = height
+                        var height = event.data.height;
+                        embed.style.height =  height + 'px';
                     }
+                } else if (event.data.type == 'onMarkdownContentScrollTopUpdated') {
+                    document.body.scrollTop = event.data.scrollTop;
+
+                    if (event.data.relativeScroll) {
+                        document.body.scrollTop += embed.offsetTop
+                    }
+                } else if (event.data.type == 'getOutsideDocumentBodyScrollTop') {
+                    embed.contentWindow.postMessage({
+                        type: 'setOutsideDocumentBodyScrollTop',
+                        scrollTop: document.body.scrollTop
+                    }, '*')
                 }
-            })
+            });
         </script>
 
-        <embed src="http://me.liyo.site/app.html" style="width:100%">
+        <iframe src="http://me.liyo.site/app.html" style="width:100%" frameborder="0"></iframe>
+        <div id="loadingme">...L.O.A.D.I.N.G...</div>
     </body>
 </html>
