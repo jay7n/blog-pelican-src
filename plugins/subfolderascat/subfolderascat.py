@@ -1,5 +1,6 @@
 import logging
 import os
+import re
 
 from pelican import signals
 
@@ -24,7 +25,8 @@ class FolderCat(object):
     def __init__(self, pelican_cats, dir, exc_dirs):
         self.entries = []
         self.is_leaf = self.is_leaf_dir(dir)
-        self.name = os.path.basename(dir)
+        # self.name = os.path.basename(dir)
+        self.name = re.sub('_\w+_', '', os.path.basename(dir))
         self.count = None
         self.url = None
 
@@ -34,10 +36,13 @@ class FolderCat(object):
             self.ignore = False
 
         ls = os.listdir(dir)
+        ls.sort()
 
         if self.is_leaf:
             for peli_cat, peli_arts in pelican_cats:
-                if self.name == peli_cat:
+                if self.name == re.sub('_\w+_', '', peli_cat.name):
+                    for art in peli_arts:
+                        art.category.name = self.name
                     self.entries = peli_arts
                     self.url = peli_cat.url
                     self.count = len(peli_arts)
@@ -64,14 +69,14 @@ class FolderCat(object):
 
     def TestPrintSelf(self, depth=0):
         for i in range(depth):
-            print '\t',
-        print self.name
+            print('\t'),
+        print(self.name)
 
         if self.is_leaf:
             for fl in self.entries:
                 for i in range(depth + 1):
-                    print '\t',
-                print os.path.basename(str(fl))
+                    print('\t'),
+                print(os.path.basename(str(fl)))
         else:
             for sub in self.entries:
                 sub.TestPrintSelf(depth + 1)

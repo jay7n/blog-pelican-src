@@ -8,18 +8,17 @@
 
                     <!-- <div class="img_separator"></div> -->
 
-                    <div class="blogContent">
-                        {{ article.summary }}
-                    </div>
 
+                    <!--
                     <a href="{{ SITEURL }}/{{ article.url }}">阅读全文 .. </a>
+                    -->
 
                     <h3 class="blogMeta">
                         <div class='blogDate'> {{ article.locale_date }} </div>
                         <!-- 作者 <a href="#">{{ article.author }}</a>, -->
-                        分类 : <a href="{{ SITEURL }}/{{ article.category.url }}">
-                                    {{ article.category }}
-                               </a>
+                        <a href="{{ SITEURL }}/{{ article.category.url }}">
+                           {{ article.category.name }}
+                        </a>
                     </h3>
 
                     <!-- <h3 class="blogMeta">Tags :
@@ -27,26 +26,37 @@
                             <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span>
                         {% endfor %}
                     </h3> -->
+                    <!--
                     <div class="separator_x2"></div>
+                    -->
                 </div><!-- end #blogItem -->
+                <div class="blogItemContent">
+                    {{ article.summary }}
+                </div>
             {% else %}
                 <div class="blogItem">
                     <header><h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
 
                     <!-- <div class="img_separator"></div> -->
 
-                    <div class="blogContent">
-                        {{ article.summary }}
-                    </div>
-
+                    <!--
                     <a href="{{ SITEURL }}/{{ article.url }}">阅读全文 .. </a>
+                    -->
 
                     <h3 class="blogMeta">
                         <div class='blogDate'> {{ article.locale_date }} </div>
                         <!-- Par <a href="#">{{ article.author }}</a>, -->
-                        分类: <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
+                        <a href="{{ SITEURL }}/{{ article.category.url }}">
+                          {{ article.category.name }}
+                        </a>
+                    </h3>
+                    <!--
                     <div class="separator_x2"></div>
+                    -->
                 </div><!-- end #blogItem -->
+                <div class="blogItemContent">
+                    {{ article.summary }}
+                </div>
             {% endif %}
         {% endfor %}
     {% else %}

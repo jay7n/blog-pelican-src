@@ -2,8 +2,13 @@
 {% block content %}
 
 
-<div class="blogItem">
-    <header><h2><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a><h2></header>
+<div class="articleBlogItem">
+    <header>
+      <h2>
+        <a class="articleTitle" href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}
+        </a>
+      <h2>
+    </header>
 
     <!-- <div class="img_separator"></div> -->
 
@@ -12,10 +17,11 @@
   </div>
   {% include 'twitter.html' %}
 
-      <h3 class="blogMeta">
-          <div class='blogDate'> {{ article.locale_date }} </div>
-          <!-- Par <a href="#">{{ article.author }}</a>,  -->
-          分类 : <a href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}</a></h3>
+      <h3 class="articleBlogMeta">
+          <div class='articleBlogDate'> {{ article.locale_date }} </div>
+          <a class="articleBlogCategory" href="{{ SITEURL }}/{{ article.category.url }}">{{ article.category }}
+          </a>
+      </h3>
     <!-- <h3 class="blogMeta">Tags : {% for tag in article.tags %} -->
 <!-- <span><a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a> / </span> -->
 <!-- {% endfor %}</h3> -->
